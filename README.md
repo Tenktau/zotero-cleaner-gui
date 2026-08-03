@@ -6,6 +6,10 @@
 
 > 如果你更喜欢命令行，欢迎移步到 [zotero-cleaner-cli](https://github.com/Tenktau/zotero-cleaner-cli)，这是我针对同一需求同步开发的命令行版本。
 
+[![Generic badge](https://img.shields.io/badge/README-EN-yellow.svg)](https://shields.io/)
+[![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://github.com/Tenktau/zotero-cleaner-gui/releases)
+![GitHub Downloads](https://img.shields.io/github/downloads/Tenktau/zotero-cleaner-gui/total?color=green)
+
 ## 它做什么
 
 - **只删重复**：按文件内容识别，不认文件名。改名、加 `(1)`、`(2)`，都躲不过。
