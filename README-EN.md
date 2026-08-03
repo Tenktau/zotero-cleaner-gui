@@ -6,7 +6,7 @@ This tool helps you **find those duplicate files and safely send them to the Rec
 
 > If you prefer the command line, check out [zotero-cleaner-cli](https://github.com/Tenktau/zotero-cleaner-cli), the CLI version I developed in parallel for the same need.
 
-[![Generic badge](https://img.shields.io/badge/README-CN-red.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/README-CN-red.svg)](https://github.com/Tenktau/zotero-cleaner-gui/blob/master/README.md)
 [![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://github.com/Tenktau/zotero-cleaner-gui/releases)
 ![GitHub Downloads](https://img.shields.io/github/downloads/Tenktau/zotero-cleaner-gui/total?color=green)
 

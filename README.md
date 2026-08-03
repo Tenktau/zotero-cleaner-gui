@@ -8,7 +8,7 @@
 
 > 如果你更喜欢命令行，欢迎移步到 [zotero-cleaner-cli](https://github.com/Tenktau/zotero-cleaner-cli)，这是我针对同一需求同步开发的命令行版本。
 
-[![Generic badge](https://img.shields.io/badge/README-EN-yellow.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/README-EN-yellow.svg)](https://github.com/Tenktau/zotero-cleaner-gui/blob/master/README-EN.md)
 [![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://github.com/Tenktau/zotero-cleaner-gui/releases)
 ![GitHub Downloads](https://img.shields.io/github/downloads/Tenktau/zotero-cleaner-gui/total?color=green)
 
