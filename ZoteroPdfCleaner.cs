@@ -30,6 +30,7 @@ namespace ZoteroCleaner
         private readonly Button _selectAll = new Button();
         private readonly Button _selectNone = new Button();
         private readonly Button _delete = new Button();
+        private readonly StatusStrip _statusStrip = new StatusStrip();
 
         private BackgroundWorker _worker;
         private CancellationTokenSource _cts;
@@ -113,6 +114,23 @@ namespace ZoteroCleaner
             _selectAll.Click += delegate { SetAllChecked(true); };
             _selectNone.Click += delegate { SetAllChecked(false); };
             _list.ItemChecked += delegate { UpdateSummary(); };
+
+            // 底部状态栏：作者 / 仓库 / 许可证声明
+            ToolStripStatusLabel author = new ToolStripStatusLabel();
+            author.Text = "© 2026 Wantao Liu（Tenktau） · ";
+            ToolStripStatusLabel repo = new ToolStripStatusLabel();
+            repo.Text = "github.com/Tenktau/zotero-cleaner-gui";
+            repo.IsLink = true;
+            repo.LinkBehavior = LinkBehavior.HoverUnderline;
+            repo.ToolTipText = "打开项目仓库";
+            repo.Click += delegate { OpenRepo(); };
+            ToolStripStatusLabel license = new ToolStripStatusLabel();
+            license.Text = " · MIT License";
+            _statusStrip.Items.Add(author);
+            _statusStrip.Items.Add(repo);
+            _statusStrip.Items.Add(license);
+            _statusStrip.SizingGrip = false;
+            Controls.Add(_statusStrip);
         }
 
         private static void RepositionBottom(Panel bottom)
@@ -163,6 +181,13 @@ namespace ZoteroCleaner
                 if (box.Text.Length > 0 && Directory.Exists(box.Text)) dlg.SelectedPath = box.Text;
                 if (dlg.ShowDialog(this) == DialogResult.OK) box.Text = dlg.SelectedPath;
             }
+        }
+
+        /// <summary>用系统默认浏览器打开项目仓库。</summary>
+        private static void OpenRepo()
+        {
+            try { System.Diagnostics.Process.Start("https://github.com/Tenktau/zotero-cleaner-gui"); }
+            catch { }
         }
 
         // ==================== 扫描 ====================
