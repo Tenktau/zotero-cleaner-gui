@@ -1,0 +1,7 @@
+# 编译产物（GitHub Actions 自动编译并发布，不提交）
+ZoteroPdfCleaner.exe
+*.exe
+
+# 构建中间产物
+bin/
+obj/

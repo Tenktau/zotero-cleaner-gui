@@ -1,0 +1,58 @@
+name: build
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  # 编译：用 Windows 自带的 csc.exe（.NET Framework），无需安装 SDK
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        shell: cmd
+        run: build.cmd
+
+      - name: Verify artifact
+        run: Get-Item ZoteroPdfCleaner.exe | Select-Object Name, Length
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ZoteroPdfCleaner-windows
+          path: ZoteroPdfCleaner.exe
+
+  # 发布：仅当推送 v* 标签时执行
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ZoteroPdfCleaner-windows
+          path: dist
+
+      - name: Package (exe + zip)
+        working-directory: dist
+        run: |
+          mv ZoteroPdfCleaner.exe ZoteroPdfCleaner-windows.exe
+          zip -q ZoteroPdfCleaner-windows.zip ZoteroPdfCleaner-windows.exe
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/ZoteroPdfCleaner-windows.exe \
+            dist/ZoteroPdfCleaner-windows.zip \
+            --generate-notes
