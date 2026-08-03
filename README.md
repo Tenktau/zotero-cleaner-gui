@@ -27,7 +27,15 @@
 
 到 [Releases](https://github.com/Tenktau/zotero-cleaner-gui/releases) 页面下载最新版 **`ZoteroPdfCleaner-windows.zip`**，解压双击即可。
 
-> 仓库本身不存放编译好的 exe——由 GitHub Actions 自动编译并发布。
+> **下载后浏览器弹出"警告"是正常的**：Windows 对"从网上下载的未签名程序"会提示「不安全 / 未知发布者」，这是系统对未知程序的例行检查，**不是文件有问题**。
+
+### 自行编译（可选）
+
+Windows 10/11 自带 .NET Framework，**无需安装任何 SDK**：
+
+1. 下载或克隆源码。
+2. 双击 `build.cmd`。
+3. 仓库目录里就生成了 `ZoteroPdfCleaner.exe`。
 
 ## 实现原理
 
