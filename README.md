@@ -39,8 +39,8 @@
 
 Windows 10/11 自带 .NET Framework，**无需安装任何 SDK**：
 
-1. 下载或克隆源码。
-2. 双击 `build.cmd`。
+1. 下载或克隆[源码](https://github.com/Tenktau/zotero-cleaner-gui/archive/refs/heads/master.zip)。
+2. 解压缩后双击 `build.cmd`。
 3. 仓库目录里就生成了 `ZoteroPdfCleaner.exe`。
 
 ## 实现原理

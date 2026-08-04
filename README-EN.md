@@ -37,8 +37,8 @@ Download the latest **`ZoteroPdfCleaner-windows.zip`** from the [Releases](https
 
 Windows 10/11 ships with .NET Framework, so **no SDK is required**:
 
-1. Download or clone the source code.
-2. Double-click `build.cmd`.
+1. Download or clone the [source code](https://github.com/Tenktau/zotero-cleaner-gui/archive/refs/heads/master.zip).
+2. Double-click `build.cmd` after decompress.
 3. `ZoteroPdfCleaner.exe` is generated in the repository directory.
 
 ## How it works
